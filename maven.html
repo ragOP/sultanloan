@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$500 WinCo Shopping Spree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(99, 102, 241, 0.8);
+        }
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-in;
+      }
+      .animate-slide-up {
+        animation: slideUp 0.4s ease-out;
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s infinite;
+      }
+      .animate-spin {
+        animation: spin 0.8s linear infinite;
+      }
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+      .spinner {
+        border: 2px solid rgba(148, 163, 184, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+      }
+      #preloader {
+        position: fixed;
+        inset: 0;
+        background: white;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s;
+      }
+      #preloader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen"
+  >
+    <!-- ===== FB PIXEL ===== -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "827049873338527");
+      fbq("track", "PageView");
+    </script>
+    <!-- ===== END FB PIXEL ===== -->
+
+    <div id="preloader"><div class="spinner animate-spin"></div></div>
+
+    <div
+      id="app"
+      class="max-w-xl mx-auto text-center font-sans text-gray-800 p-4 flex flex-col min-h-screen"
+    >
+      <main class="flex flex-col flex-grow justify-center" id="mainContent">
+        <!-- Intro Screen -->
+        <div
+          id="introScreen"
+          class="bg-white p-4 sm:p-8 rounded-2xl shadow-xl animate-fade-in"
+        >
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-gray-800 mb-2">
+            You're Selected for a $500 WinCo Shopping Spree!
+          </h1>
+          <p class="text-gray-600 mb-6 text-base sm:text-lg">
+            Congratulations! You have been pre-selected to receive a $500 WinCo
+            Shopping Spree.
+          </p>
+          <img
+            src="./assets/card.png"
+            alt="Reward Preview"
+            loading="lazy"
+            class="mx-auto rounded-lg shadow-lg max-w-[180px] sm:max-w-[220px] mb-6"
+          />
+          <p class="text-gray-600 mb-8 text-base sm:text-lg">
+            Click below to answer a few questions and claim your reward!
+          </p>
+          <button
+            onclick="startQuiz()"
+            class="w-full text-white bg-indigo-500 hover:bg-indigo-600 font-bold py-4 sm:py-5 px-3 rounded-xl text-xl sm:text-2xl tracking-wider shadow-lg transition-all duration-300 animate-pulse-glow"
+          >
+            Start Survey
+          </button>
+        </div>
+      </main>
+
+      <!-- Trust Badges -->
+      <div
+        id="trustBadges"
+        class="w-full max-w-xl mx-auto overflow-hidden py-8"
+      >
+        <div class="relative">
+          <div
+            class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blue-50 to-transparent z-10"
+          ></div>
+          <div class="flex animate-marquee" style="width: 200%">
+            <div
+              class="flex-shrink-0 flex items-center bg-white shadow-lg rounded-full px-4 py-2 sm:px-5 sm:py-2.5 mx-3 sm:mx-4"
+            >
+              <svg
+                class="h-5 w-5 text-green-500 mr-3"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M22.45,8.28l-5.63-1L12,2.2,7.18,7.26l-5.63,1L6.1,12.55,4.8,18.06,10,15.25l-.23-5.59,2.2-1.28,5.55.8,1.29-5.32L22.45,8.28Z"
+                />
+              </svg>
+              <div class="text-left">
+                <div class="flex items-center">
+                  <svg
+                    class="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                </div>
+                <p class="text-xs text-gray-500 leading-tight">
+                  Rated <strong class="text-gray-800">4.8/5</strong> by
+                  <strong class="text-gray-800">12,451+</strong> users
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 flex items-center bg-white shadow-lg rounded-full px-4 py-2 sm:px-5 sm:py-2.5 mx-3 sm:mx-4"
+            >
+              <svg class="h-5 w-5 mr-3" viewBox="0 0 48 48">
+                <path
+                  fill="#4285F4"
+                  d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+                />
+              </svg>
+              <div class="text-left">
+                <div class="flex items-center">
+                  <svg
+                    class="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007z"
+                    />
+                  </svg>
+                </div>
+                <p class="text-xs text-gray-500 leading-tight">
+                  Rated <strong class="text-gray-800">4.7/5</strong> by
+                  <strong class="text-gray-800">21,830+</strong> users
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex-shrink-0 flex items-center bg-white shadow-lg rounded-full px-4 py-2 sm:px-5 sm:py-2.5 mx-3 sm:mx-4"
+            >
+              <svg
+                class="w-5 h-5 text-orange-500 mr-3"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M16.5 6.25c0 .966-.784 1.75-1.75 1.75l-1.125.001c-.394.833-1.01 1.54-1.768 2.055a4.5 4.5 0 01-4.714 0c-.758-.515-1.374-1.222-1.768-2.055L4.25 8.001C3.284 8 2.5 7.216 2.5 6.25S3.284 4.5 4.25 4.5h11.5c.966 0 1.75.784 1.75 1.75z"
+                />
+              </svg>
+              <div class="text-left">
+                <p class="text-xs text-gray-500 leading-tight">
+                  Voted Top Deal in
+                  <span class="font-bold text-gray-700">r/beermoney</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-blue-50 to-transparent z-10"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Video Testimonials -->
+      <div id="videoTestimonials" class="my-8 text-center">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+          See What Our Winners Say!
+        </h3>
+        <p class="text-gray-600 text-sm sm:text-base mb-6">
+          Real people, real rewards.
+        </p>
+        <div class="flex justify-center items-center gap-3 sm:gap-6">
+          <div
+            onclick="openVideo('./assets/video1.mp4')"
+            class="relative w-28 h-44 sm:w-36 sm:h-56 flex-shrink-0 rounded-xl overflow-hidden shadow-lg cursor-pointer group hover:scale-105 transition-transform"
+          >
+            <video
+              src="./assets/video3.mp4"
+              preload="metadata"
+              muted
+              playsinline
+              class="w-full h-full object-cover"
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-colors"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10 sm:w-12 sm:h-12 text-white"
+                >
+                  <path
+                    d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.647c1.295.742 1.295 2.545 0 3.286L7.279 20.99c-1.25.717-2.779-.217-2.779-1.643V5.653z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            onclick="
+              openVideo(
+                'https://datingproducts.b-cdn.net/d8ce1575738fb033a0992341e40dcdc604fea825.mp4',
+              )
+            "
+            class="relative w-28 h-44 sm:w-36 sm:h-56 flex-shrink-0 rounded-xl overflow-hidden shadow-lg cursor-pointer group hover:scale-105 transition-transform"
+          >
+            <video
+              src="./assets/video2.mp4"
+              preload="metadata"
+              muted
+              playsinline
+              class="w-full h-full object-cover"
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-colors"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10 sm:w-12 sm:h-12 text-white"
+                >
+                  <path
+                    d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.647c1.295.742 1.295 2.545 0 3.286L7.279 20.99c-1.25.717-2.779-.217-2.779-1.643V5.653z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            onclick="
+              openVideo(
+                'https://datingproducts.b-cdn.net/e4ca9719ebaec9152476ceb1157ecfeed8ef7780.mp4',
+              )
+            "
+            class="relative w-28 h-44 sm:w-36 sm:h-56 flex-shrink-0 rounded-xl overflow-hidden shadow-lg cursor-pointer group hover:scale-105 transition-transform"
+          >
+            <video
+              src="./assets/video1.mov"
+              preload="metadata"
+              muted
+              playsinline
+              class="w-full h-full object-cover"
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center"
+            >
+              <div
+                class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/30 transition-colors"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-10 h-10 sm:w-12 sm:h-12 text-white"
+                >
+                  <path
+                    d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.647c1.295.742 1.295 2.545 0 3.286L7.279 20.99c-1.25.717-2.779-.217-2.779-1.643V5.653z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comments Section -->
+      <div
+        class="bg-white text-left p-4 sm:p-6 rounded-2xl shadow-xl mt-4 animate-fade-in"
+      >
+        <h3 class="font-bold text-xl text-gray-900 mb-4">Comments</h3>
+        <div class="border-t border-gray-200 pt-4">
+          <div class="flex space-x-3 mb-4">
+            <div
+              class="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Write a comment..."
+              class="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-700 border-none focus:ring-2 focus:ring-blue-400 focus:outline-none transition"
+            />
+          </div>
+          <div class="space-y-4">
+            <div class="flex space-x-3">
+              <img
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Jennifer Smith"
+                class="w-9 h-9 rounded-full"
+                loading="lazy"
+              />
+              <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl p-3">
+                  <p class="font-bold text-gray-800 text-sm">Jennifer Smith</p>
+                  <p class="text-gray-700 text-sm">
+                    It worked! Just received my $500 WinCo gift card. Thank you
+                    so much!
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <button class="hover:underline text-gray-600">Reply</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">5d ago</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-3 ml-8 sm:ml-12 pl-1 border-l-2 border-gray-200 flex space-x-3"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="bg-indigo-50 rounded-2xl p-3">
+                  <p class="font-bold text-indigo-700 text-sm">
+                    Community Manager
+                  </p>
+                  <p class="text-gray-800 text-sm">
+                    Congrats! Enjoy your shopping! 🎉
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">5d ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <img
+                src="https://i.pravatar.cc/150?img=3"
+                alt="Michael Johnson"
+                class="w-9 h-9 rounded-full"
+                loading="lazy"
+              />
+              <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl p-3">
+                  <p class="font-bold text-gray-800 text-sm">Michael Johnson</p>
+                  <p class="text-gray-700 text-sm">
+                    At first I was skeptical but I'm so glad I did this survey.
+                    I'm glad I got this for my family, we needed the help!
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <button class="hover:underline text-gray-600">Reply</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">2d ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <img
+                src="https://i.pravatar.cc/150?img=5"
+                alt="Sarah Williams"
+                class="w-9 h-9 rounded-full"
+                loading="lazy"
+              />
+              <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl p-3">
+                  <p class="font-bold text-gray-800 text-sm">Sarah Williams</p>
+                  <p class="text-gray-700 text-sm">
+                    Just used my WinCo gift card for groceries. This is amazing!
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <button class="hover:underline text-gray-600">Reply</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">1w ago</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-3 ml-8 sm:ml-12 pl-1 border-l-2 border-gray-200 flex space-x-3"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center flex-shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="bg-indigo-50 rounded-2xl p-3">
+                  <p class="font-bold text-indigo-700 text-sm">
+                    Community Manager
+                  </p>
+                  <p class="text-gray-800 text-sm">
+                    Awesome! Groceries are always a smart choice. Glad you're
+                    making the most of it! 🛍️😊
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">1w ago</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex space-x-3">
+              <img
+                src="https://i.pravatar.cc/150?img=7"
+                alt="Emily Garcia"
+                class="w-9 h-9 rounded-full"
+                loading="lazy"
+              />
+              <div class="flex-1">
+                <div class="bg-gray-100 rounded-2xl p-3">
+                  <p class="font-bold text-gray-800 text-sm">Emily Garcia</p>
+                  <p class="text-gray-700 text-sm">
+                    Super easy process and qualification. The gift card came
+                    right on time for my daughter's birthday shopping.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center space-x-3 text-xs text-gray-500 font-bold px-3 py-1"
+                >
+                  <button class="hover:underline text-gray-600">Like</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <button class="hover:underline text-gray-600">Reply</button>
+                  <span class="text-gray-400 font-normal">·</span>
+                  <span class="font-normal">3d ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-transparent p-4 text-xs text-gray-500 text-center mt-8">
+        <p class="mb-2">
+          © 2024. All rights reserved. This program is not affiliated with
+          WinCo, Meta or other brands mentioned.
+        </p>
+        <div>
+          <a
+            href="./terms.html"
+            class="text-gray-600 hover:text-blue-600 hover:underline"
+            >Terms of Service</a
+          >
+          <span class="mx-2">|</span>
+          <a
+            href="./policy.html"
+            class="text-gray-600 hover:text-blue-600 hover:underline"
+            >Privacy Policy</a
+          >
+          <span class="mx-2">|</span>
+          <a
+            href="./agreement.html"
+            class="text-gray-600 hover:text-blue-600 hover:underline"
+            >Brand Agreement</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4"
+      onclick="closeVideo()"
+    >
+      <div
+        class="bg-black rounded-2xl shadow-2xl w-full max-w-3xl aspect-video relative"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="closeVideo()"
+          class="absolute -top-10 -right-1 sm:top-2 sm:-right-12 text-white hover:text-gray-300 z-10 bg-black/30 rounded-full p-1"
+        >
+          <svg
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <video
+          id="modalVideo"
+          controls
+          autoplay
+          class="w-full h-full rounded-2xl"
+        ></video>
+      </div>
+    </div>
+
+    <script>
+      // =============================================
+      // USER ANSWERS + QUIZ QUESTIONS (Costco-style)
+      // =============================================
+      var userAnswers = {
+        shopFrequency: null, // Q1
+        age: null, // Q2
+        income: null, // Q3  value: 1-5
+        creditCard: null, // Q4  value: 'never'|'rarely'|'often'
+      };
+
+      const questions = [
+        {
+          question: "How often do you shop at the WinCo?",
+          options: ["Weekly", "Monthly", "Only for big hauls"],
+          key: "shopFrequency",
+          values: ["weekly", "monthly", "hauls"],
+        },
+        {
+          question: "What is your age group?",
+          options: ["Under 20", "20–29", "30–49", "50–64", "65 or older"],
+          key: "age",
+          values: ["under20", "20-29", "30-49", "50-64", "65+"],
+        },
+        {
+          question: "What is your approximate annual household income?",
+          options: [
+            "Under $25,000",
+            "$25,000 – $50,000",
+            "$50,000 – $75,000",
+            "$75,000 – $100,000",
+            "$100,000+",
+          ],
+          key: "income",
+          values: [1, 2, 3, 4, 5],
+        },
+        {
+          question: "How often do you use a credit card for purchases?",
+          options: ["Never", "Rarely", "Often"],
+          key: "creditCard",
+          values: ["never", "rarely", "often"],
+        },
+      ];
+
+      // =============================================
+      // QUALITY CHECK — identical logic to Costco
+      // income >= 25k (value>=2) AND creditCard='often' → FIRE
+      // income >= 50k (value>=3) AND creditCard='rarely' → FIRE
+      // creditCard='never' → NEVER fire
+      // =============================================
+      function isHighQualityUser() {
+        var income = userAnswers.income;
+        var cc = userAnswers.creditCard;
+        if (cc === "never") return false;
+        if (cc === "often" && income >= 2) return true;
+        if (cc === "rarely" && income >= 3) return true;
+        return false;
+      }
+
+      // =============================================
+      // FIRE FB PIXEL ViewContent EVENT
+      // =============================================
+      function fireFBPixel() {
+        if (typeof fbq === "function") {
+          fbq("track", "ViewContent");
+          console.log("[Pixel] ViewContent fired ✓");
+        } else {
+          console.warn("[Pixel] fbq not loaded");
+        }
+      }
+
+      // =============================================
+      // PRELOADER
+      // =============================================
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        if (preloader) preloader.classList.add("fade-out");
+      }, 200);
+
+      // =============================================
+      // QUIZ
+      // =============================================
+      let currentQuestion = 0;
+      let resultTimer = null;
+
+      function startQuiz() {
+        document.getElementById("introScreen").style.display = "none";
+        document.getElementById("trustBadges").style.display = "none";
+        document.getElementById("videoTestimonials").style.display = "none";
+        currentQuestion = 0;
+        showQuestion();
+      }
+
+      function showQuestion() {
+        const q = questions[currentQuestion];
+        const progress = ((currentQuestion + 1) / questions.length) * 100;
+
+        document.getElementById("mainContent").innerHTML = `
+          <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-xl animate-slide-up">
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 sm:mb-6">
+              <div class="bg-gradient-to-r from-indigo-400 to-indigo-600 h-2.5 rounded-full transition-all duration-500" style="width:${progress}%"></div>
+            </div>
+            <h2 class="text-lg sm:text-xl font-bold text-gray-700 p-2 sm:p-3 mb-4">
+              Please answer the following questions to continue.
+            </h2>
+            <p class="font-semibold text-gray-500 text-base sm:text-lg mb-2">Question ${currentQuestion + 1} of ${questions.length}</p>
+            <p class="font-bold text-xl sm:text-2xl text-gray-800 mb-6 sm:mb-8">${q.question}</p>
+            <div class="space-y-3">
+              ${q.options
+                .map(
+                  (answer, index) => `
+                <button onclick="selectAnswer(${index})" id="answer-${index}"
+                  class="w-full text-white font-bold py-3 sm:py-4 px-5 rounded-xl text-base sm:text-lg tracking-wide shadow-lg focus:outline-none focus:ring-4 transition-all duration-300 bg-indigo-500 hover:bg-indigo-600 focus:ring-indigo-300">
+                  ${answer}
+                </button>
+              `,
+                )
+                .join("")}
+            </div>
+          </div>`;
+      }
+
+      function selectAnswer(index) {
+        const q = questions[currentQuestion];
+        // Save answer using correct key/value
+        userAnswers[q.key] = q.values[index];
+
+        const btn = document.getElementById(`answer-${index}`);
+        btn.classList.remove("bg-indigo-500", "hover:bg-indigo-600");
+        btn.classList.add("bg-emerald-500");
+        btn.innerHTML = `
+          <svg class="h-6 w-6 text-white inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>${btn.textContent}`;
+
+        setTimeout(() => {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            showQuestion();
+          } else {
+            showChecking();
+          }
+        }, 600);
+      }
+
+      function showChecking() {
+        const checks = [
+          "Establishing secure connection...",
+          "Cross-referencing database for duplicate entries...",
+          "Verifying survey completion...",
+          "Confirming available reward slots...",
+          "✅ Success! You qualify.",
+        ];
+        let currentCheck = 0;
+
+        document.getElementById("mainContent").innerHTML = `
+          <div class="fixed inset-0 bg-black/70 backdrop-blur-md flex flex-col items-center justify-center z-50 p-4">
+            <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 shadow-2xl max-w-md w-full">
+              <p class="text-white text-3xl font-bold text-center mb-8">Verifying Your Answers...</p>
+              <div class="flex items-center space-x-4 h-8">
+                <p id="checkText" class="font-medium text-slate-200 text-lg">${checks[0]}</p>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2 mt-8 overflow-hidden">
+                <div id="checkProgress" class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full transition-all duration-1000" style="width:20%"></div>
+              </div>
+            </div>
+          </div>`;
+
+        const interval = setInterval(() => {
+          currentCheck++;
+          if (currentCheck < checks.length) {
+            document.getElementById("checkText").textContent =
+              checks[currentCheck];
+            document.getElementById("checkProgress").style.width =
+              `${((currentCheck + 1) / checks.length) * 100}%`;
+          } else {
+            clearInterval(interval);
+          }
+        }, 1000);
+
+        setTimeout(showResults, 5500);
+      }
+
+      function showResults() {
+        let timeLeft = 300;
+
+        document.getElementById("mainContent").innerHTML = `
+          <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl text-center animate-fade-in">
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-gray-800 mb-2 pt-4">Congratulations!</h1>
+            <p class="text-gray-700 font-semibold mb-1">
+              Your spot is reserved for the next <span class="text-red-500 font-bold" id="timer">05:00</span>.
+            </p>
+            <img src="./assets/card.png" alt="Reward" loading="lazy" class="mx-auto rounded-lg shadow-lg max-w-[180px] sm:max-w-[220px] mb-6">
+            <p class="text-gray-600 mb-8 text-sm">Follow the steps below to claim your reward.</p>
+            <div class="px-4 mb-8">
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-full text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                  </div>
+                  <div class="w-px h-full border-l-2 border-dashed border-gray-300"></div>
+                </div>
+                <div class="text-left pb-8">
+                  <p class="mb-1 text-base font-bold text-gray-800">Confirm Your Details</p>
+                  <p class="text-sm text-gray-600">Click the button below to proceed. You'll need to enter your basic information on the next page.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-full text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                  </div>
+                  <div class="w-px h-full border-l-2 border-dashed border-gray-300"></div>
+                </div>
+                <div class="text-left pb-8">
+                  <p class="mb-1 text-base font-bold text-gray-800">Explore Partner Offers</p>
+                  <p class="text-sm text-gray-600">To claim your reward, you may need to complete a set number of sponsored deals. Follow the instructions carefully.</p>
+                </div>
+              </div>
+              <div class="flex">
+                <div class="flex flex-col items-center mr-4">
+                  <div class="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                  </div>
+                </div>
+                <div class="text-left pb-8">
+                  <p class="mb-1 text-base font-bold text-gray-800">Receive Your Reward</p>
+                  <p class="text-sm text-gray-600">Once verified, your $500 WinCo Shopping Spree will be sent to you. Enjoy your shopping!</p>
+                </div>
+              </div>
+            </div>
+            <a id="claimBtn" href="https://trk.offerstation.info/cf/click/1"
+              class="block w-full text-white bg-emerald-500 hover:bg-emerald-600 font-bold py-4 sm:py-5 px-3 rounded-xl text-xl sm:text-2xl tracking-wider shadow-lg transition-colors duration-300 animate-pulse-glow mb-2">
+              CLAIM YOUR REWARD NOW
+            </a>
+            <p class="text-xs text-gray-500 mt-2 animate-pulse">🔥 <strong>152</strong> people have claimed this in the last hour.</p>
+            <div class="mt-6 text-center">
+              <button onclick="showFaq()" class="text-sm text-gray-500 hover:text-blue-600 hover:underline">Frequently Asked Questions</button>
+            </div>
+          </div>`;
+
+        // Attach pixel listener to claim button — fires only for HQ users
+        const claimBtn = document.getElementById("claimBtn");
+        if (claimBtn) {
+          claimBtn.addEventListener("click", function () {
+            if (isHighQualityUser()) {
+              fireFBPixel();
+            } else {
+              console.log("[Pixel] Non-quality user — pixel NOT fired");
+            }
+          });
+        }
+
+        resultTimer = setInterval(() => {
+          timeLeft--;
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          const timerEl = document.getElementById("timer");
+          if (timerEl) {
+            timerEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+          }
+          if (timeLeft <= 0) clearInterval(resultTimer);
+        }, 1000);
+      }
+
+      function showFaq() {
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4";
+        modal.onclick = () => modal.remove();
+        modal.innerHTML = `
+          <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="p-6 sm:p-8 sticky top-0 bg-white border-b border-gray-200 flex justify-between items-center">
+              <h2 class="text-xl sm:text-2xl font-bold text-gray-800">Frequently Asked Questions</h2>
+              <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-600">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </div>
+            <div class="p-6 sm:p-8">
+              <ul class="space-y-6">
+                <li>
+                  <p class="font-bold text-gray-800 text-base sm:text-lg mb-2">Is this a real reward?</p>
+                  <p class="text-gray-600 text-sm sm:text-base">Yes, this is a real reward. We partner with brands looking for consumer feedback. By completing the required steps on the next page, you can claim your reward. Stock is limited.</p>
+                </li>
+                <li>
+                  <p class="font-bold text-gray-800 text-base sm:text-lg mb-2">Why do I need to answer these questions?</p>
+                  <p class="text-gray-600 text-sm sm:text-base">The initial questions help us determine your eligibility for specific promotional campaigns based on demographic data. This ensures we match you with the correct offers.</p>
+                </li>
+                <li>
+                  <p class="font-bold text-gray-800 text-base sm:text-lg mb-2">Are there any hidden fees?</p>
+                  <p class="text-gray-600 text-sm sm:text-base">There are no hidden fees to participate. You may need to complete a certain number of promotional deals on the next page, some of which might require a purchase. Please read all terms carefully.</p>
+                </li>
+                <li>
+                  <p class="font-bold text-gray-800 text-base sm:text-lg mb-2">How long does it take to receive the reward?</p>
+                  <p class="text-gray-600 text-sm sm:text-base">Once you have successfully completed all the required steps and your participation is verified, your reward will be processed. You will typically receive a confirmation email with tracking details.</p>
+                </li>
+              </ul>
+            </div>
+          </div>`;
+        document.body.appendChild(modal);
+      }
+
+      function openVideo(src) {
+        const modal = document.getElementById("videoModal");
+        const video = document.getElementById("modalVideo");
+        video.src = src;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+      }
+
+      function closeVideo() {
+        const modal = document.getElementById("videoModal");
+        const video = document.getElementById("modalVideo");
+        video.pause();
+        video.src = "";
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    </script>
+
+    <!-- ClickFlare tracking script -->
+    <script>
+      !(function () {
+        "use strict";
+        var n = "lp_ref",
+          t = "cpid",
+          e = "lpurl",
+          c = "https://trk.offerstation.info",
+          r = "(?<domain>http(?:s?)://[^/]*)".concat("/cf/click"),
+          a = "(?:(?:/(?<cta>[1-9][0-9]*)/?)|(?:/))?",
+          i = "^".concat(r).concat(a).concat("(?:$|(\\?.*))"),
+          o = 'javascript:window.clickflare.l="(?<original_link>'
+            .concat(r)
+            .concat(a, '("|(\\?[^"]*"))).*'),
+          s = function () {
+            return new RegExp(i, "");
+          },
+          u = function () {
+            return new RegExp(o, "");
+          };
+        function l(n) {
+          var t = (function (n) {
+            return n.replace(s(), function (n) {
+              for (var t = [], e = 1; e < arguments.length; e++)
+                t[e - 1] = arguments[e];
+              var r = t[t.length - 1].domain;
+              return n.replace(r, c);
+            });
+          })(n);
+          return 'javascript:window.clickflare.l="'.concat(t, '"; void 0;');
+        }
+        function d(n, t) {
+          if (
+            (t && n && t.apply(document, [n]),
+            /loaded|interactive|complete/.test(document.readyState))
+          )
+            for (var e = 0, c = document.links.length; e < c; e++)
+              if (s().test(document.links[e].href)) {
+                var r = document.links[e];
+                window.clickflare.links_replaced.has(r) ||
+                  ((r.href = l(r.href)),
+                  window.clickflare.links_replaced.add(r));
+              }
+        }
+        var f, h, m, p;
+        !(function (r, a) {
+          var i = document.onreadystatechange;
+          window.clickflare ||
+            ((window.clickflare = {
+              listeners: {},
+              customParams: {},
+              links_replaced: new Set(),
+              addEventListener: function (n, t) {
+                var e = this.listeners[n] || [];
+                (e.includes(t) || e.push(t), (this.listeners[n] = e));
+              },
+              dispatchEvent: function (n, t) {
+                (t && (this.customParams[n] = t),
+                  (this.listeners[n] || []).forEach(function (n) {
+                    return n(t);
+                  }));
+              },
+              push: function (n, t) {
+                (t && (this.customParams[n] = t),
+                  (this.listeners[n] || []).forEach(function (n) {
+                    return n(t);
+                  }));
+              },
+            }),
+            (document.onreadystatechange = function (n) {
+              return d(n, i);
+            }),
+            d(null, i),
+            setTimeout(function () {
+              !(function (r, a) {
+                var i,
+                  o = (function (r, a) {
+                    var i = new URL("".concat(c).concat(r)),
+                      o = "{",
+                      s = o + o;
+                    a.startsWith(s) || i.searchParams.set(t, a);
+                    return (
+                      i.searchParams.append(n, document.referrer),
+                      i.searchParams.append(e, location.href),
+                      i.searchParams.append("lpt", document.title),
+                      i.searchParams.append(
+                        "t",
+                        new Date().getTime().toString(),
+                      ),
+                      i.toString()
+                    );
+                  })(r, a),
+                  s = document.createElement("script"),
+                  l = document.scripts[0];
+                ((s.async = 1),
+                  (s.src = o),
+                  (s.onerror = function () {
+                    !(function () {
+                      for (
+                        var n = function (n, t) {
+                            var e = document.links[n];
+                            u().test(decodeURI(e.href)) &&
+                              setTimeout(function () {
+                                e &&
+                                  e.setAttribute(
+                                    "href",
+                                    (function (n) {
+                                      var t = n.match(u());
+                                      if (t) {
+                                        var e = (t.groups || {}).original_link;
+                                        return e ? e.slice(0, -1) : n;
+                                      }
+                                      return n;
+                                    })(decodeURI(e.href)),
+                                  );
+                              });
+                          },
+                          t = 0,
+                          e = document.links.length;
+                        t < e;
+                        t++
+                      )
+                        n(t);
+                    })();
+                  }),
+                  null === (i = l.parentNode) ||
+                    void 0 === i ||
+                    i.insertBefore(s, l));
+              })(r, a);
+            }));
+        })(
+          ""
+            .concat("/cf/tags", "/")
+            .concat(
+              new URL(window.location.href).searchParams.get("cftmid") ||
+                "{{__CONTAINER_ID__}}",
+            ),
+          ((m = new URL(window.location.href).searchParams.get(t)),
+          (f = new RegExp("(^| )".concat("cf_cpid", "=([^;]+)"))),
+          (p = ((h = document.cookie.match(f)) && h.pop()) || null),
+          m || p || "{{__CAMPAIGN_ID__}}"),
+        );
+      })();
+    </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"fce0aaf92e684fccacee7a3b6742dbff","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
